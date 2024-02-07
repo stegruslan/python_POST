@@ -28,4 +28,4 @@
    }
    ```
    Согласно значению members, мы создаем или удаляем \
-   записи WorkspaceRole
+   записи WorkspaceRole.
