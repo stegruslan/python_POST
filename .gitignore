@@ -1,0 +1,9 @@
+.idea
+.venv
+.vscode
+
+
+**/__pacache__
+
+
+.env
