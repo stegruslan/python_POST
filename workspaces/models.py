@@ -1,7 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-
-from choices import RoleChoice
+from .choices import RoleChoice
 
 
 class User(AbstractUser):
@@ -13,13 +12,18 @@ class User(AbstractUser):
 
 
 class Workspace(models.Model):
-    title = models.CharField(max_length=255, verbose_name='Пространство')
+    title = models.CharField(
+        max_length=255,
+        verbose_name='Пространство',
+    )
     description = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
 
 class WorkspaceRole(models.Model):
-    workspace = models.ForeignKey(Workspace, on_delete=models.CASCADE)
-
+    workspace = models.ForeignKey(
+        Workspace,
+        on_delete=models.CASCADE
+    )
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     role = models.CharField(choices=RoleChoice, max_length=6)

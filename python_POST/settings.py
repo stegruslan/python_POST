@@ -1,5 +1,5 @@
 from pathlib import Path
-
+from django.db import models
 from envparse import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'workspaces',
+
 ]
 
 AUTH_USER_MODEL = 'workspaces.User'
